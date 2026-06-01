@@ -7,5 +7,11 @@
 # 只追踪 Markdown 记录文件。
 !*.md
 
+# 允许追踪项目脚本源码，供 CodeGraph 建立代码索引。
+!script/**/*.py
+
 # 保留本规则文件。
 !.gitignore
+
+# CodeGraph 本地索引文件不提交。
+.codegraph/
