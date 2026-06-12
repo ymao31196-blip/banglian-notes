@@ -5,6 +5,8 @@
 > GPU：NVIDIA GeForce RTX 3050 Laptop GPU  
 > 实验性质：WindFM 零样本、小批量、流程验证实验
 
+> 后续进展：同一批6个起报窗口上的NWP驱动LightGBM/XGBoost对比已经完成。LightGBM整体RMSE为20.66 MW，低于WindFM的22.33 MW。详细结果见《WindFM与NWP树模型同窗口对比.md》。
+
 ## 一、完成的工作
 
 本轮已经不再停留在论文和代码调研，而是完成了 WindFM 官方模型到苗庄场站数据的实际适配。
@@ -189,9 +191,9 @@ pred_len × sample_count
 
 向数据提供方确认SCADA和NetCDF时区，并按确认口径重新生成唯一正式对齐表。
 
-### 第二优先级：同窗口树模型对比
+### 第二优先级：同窗口树模型对比，已完成
 
-在同样的6个起报窗口上建立未来NWP驱动的 LightGBM 和 XGBoost，避免拿不同日期、不同任务的历史指标直接比较。
+已在同样的6个起报窗口上建立未来NWP驱动的 LightGBM 和 XGBoost。LightGBM整体RMSE为20.66 MW，XGBoost为21.12 MW，均低于WindFM的22.33 MW。下一步应扩大连续NWP数据范围，并验证气象文件实际到达延迟。
 
 ### 第三优先级：扩大回测
 
